@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+            <%- include('partials/lowerNavBar.ejs') %>
+                <%- include('partials/banner.ejs') %>
+                    <main>
+                        <div id="libroBuscado">
+                            <% if (books.length > 0) { %>
+                                <% for (let i=0; i < books.length; i++) { %>
+                                    <a href="/products/details/<%= books[i].id %>">
+                                        <%= books[i].title %><br>
+                                    </a>
+                                    <% } %>
+                                        <% } else { %>
+                                            <p style="color:red;">Oops, Libro no encontrado</p>
+                                            <% } %>
+                        </div>
+                    </main>
+                    <%- include('partials/footer.ejs') %>
+                        <%- include('partials/lowerFooter.ejs') %>
+    </body>
+
+</html>

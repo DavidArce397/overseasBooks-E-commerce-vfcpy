@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head.ejs') %>
+    
+<body class="body-login">
+    <%- include('partials/header.ejs') %>
+    <form class="formulario" method="POST" action="/user/login">
+
+        
+        <h1 class="h1-login">Login</h1>
+        <div class="contenedor">
+            
+            <div class="errores">
+                <ul></ul>
+            </div>
+     
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input class="mail input-register" type="text" placeholder="Correo Electronico" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+         </div>
+         <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+                <%= errors.email.msg %>
+            </div>
+            <% } %>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input  class="password input-register" type="password" placeholder="Contraseña" name="password">
+         <div style="padding: 10px;">
+            <i class="fa-solid fa-eye" id="eye-icon" style="color: #999; opacity: 0;" onclick="showPassword()" onmouseover="document.querySelector('#eye-icon').style.opacity = 1;" onmouseout="document.querySelector('#eye-icon').style.opacity = 0;"></i>
+        </div>         </div>
+         <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+                <%= errors.password.msg %>
+            </div>
+            <% } %>
+            <label><input type="checkbox" name="botonremember"> Recordar mi usuario</label>
+         <input type="submit" value="Login" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿No tienes una cuenta? <a class="link" href="/user/register">Registrate</a></p>
+         <p>¿Olvidaste tu contraseña? <a class="link" href="/user/passwordreset">Recuperala aqui </a></p>
+     </div>
+    </form>
+    <!-- Footer Uli -->
+    <div onclick="pressButton(event)">
+        <%- include('partials/footer.ejs') %>
+
+            <%- include('partials/lowerFooter.ejs') %>
+
+            <%- include('partials/quienesSomos.ejs') %>
+
+            <%- include('partials/trabaja.ejs') %>
+            <%- include('partials/contacto.ejs') %>
+            <%- include('partials/terminos.ejs') %>
+            <%- include('partials/cookies.ejs') %>
+        </div>
+        <!-- <script src="/js/validationlogin-front.js"></script> -->
+        <script src="/js/js-footer.js"></script>
+        <!-- Para mostrar contraseña -->
+        <script type="text/javascript">
+            function showPassword() {
+                var x = document.querySelector(".password.input-register");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            };
+        </script>
+</body>
+</html>
+
+

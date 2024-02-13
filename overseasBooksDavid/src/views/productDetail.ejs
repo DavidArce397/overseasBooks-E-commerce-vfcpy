@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body class="body">
+        <%- include('partials/header.ejs') %>
+            <%- include('partials/lowerNavBar.ejs') %>
+                <br>
+                <br>
+
+                <main>
+
+                    <section>
+                        <div class="contenedor">
+                            <div class="columna-a-derecha">
+                                <h1 class="productTitle">
+                                    <%= currentBook.title %>
+                                </h1>
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span>(99)</span>
+                                </div>
+                                <div class="columna-a-izquierda">
+                                    <div class="compartirIcono">
+                                        <span class="material-symbols-outlined">
+                                            share
+                                        </span>
+                                    </div>
+                                    <div class="divImagen">
+                                        <img class="imagenProducto" src="/images/products/<%= currentBook.img %>"
+                                            alt="imagen">
+                                    </div>
+                                </div>
+
+
+                                <div class="cajaResumen">
+
+                                    <section class="resumenLibro">
+                                        <div class="resumenTitulo">
+                                            <span>Resumen del Libro</span>
+                                        </div>
+
+                                        <p>
+                                            <span class="pNegrita">
+                                                <%= currentBook.description %>
+                                            </span>
+                                        </p>
+
+                                    </section>
+                                    <br>
+                                </div>
+                    </section>
+
+                    <br>
+                    <div class="line"></div>
+                    <br>
+                    <div class="contenedor">
+                        <div class="price">
+                            <h2>$<%= currentBook.price %>
+                            </h2>
+                        </div>
+                        <div class="deliveryDate">
+                            <p>
+                                <i class="fa-solid fa-truck"></i>
+                                Llega el <strong>Lunes, 29 de Mayo</strong>
+                            </p>
+                        </div>
+                        <div class="deliveryLocation">
+                            <p>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Enviar a Buenos Aires, Argentina
+                            </p>
+                        </div>
+                        <div class="stockDisponible">
+                            <p class=<%=currentBook.stock> 0 ? 'stockDisponibleP' : 'outOfStockP' %>>
+                                Stock Disponible
+                            </p>
+                        </div>
+                        <div class="cantidad">
+                            <span class="cantidadTexto">Cantidad:</span>
+                            <div class="divCantidad">
+                                <form action="">
+                                    <span class="cantNumero">
+                                        <button style="margin-right: 5px; width: 20px;"
+                                            onclick="reducirUnidadInputDetail(event)">
+                                            <i class="fa-solid fa-minus"></i></button>
+                                        <input type="number" min="0" max="<%= currentBook.stock %>" value="1"
+                                            class="inputCantidadProductos" id="<%= currentBook.id %>">
+                                        <button style="margin-left: 5px; width: 20px;"
+                                            onclick="agregarUnidadInputDetail(event)">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </span>
+                                </form>
+                                <div class="divCantidadArticulosDisponibles">
+                                    <span class=<%=currentBook.stock> 0 ? 'cantDisponible' : 'sinArticulosDisponibles'
+                                        %>>(<%= currentBook.stock %> disponibles)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divBotonCarrito">
+                            <button type="submit" class="botonCarrito" id="<%= currentBook.id %>">
+                                <span class="botonCarritoInterior">Añadir al carrito</span>
+                            </button>
+                        </div>
+                        <div class="divBotonCompra" data-stock="<%= currentBook.stock %>">
+
+                            <button type="submit" class="botonCompra" id="<%= currentBook.id %>">
+                                <span class="botonInterior">Comprar ahora</span>
+                            </button>
+
+                        </div>
+                        <br>
+                        <div class="transaccionSegura">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Compra Protegida</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Haciendo carousel de libros recomendados -->
+
+                    <div class="contenedor">
+                        <h2>Libros que podrían gustarte</h2>
+                        <br>
+                    </div>
+
+                    <!-- Colocar script carousel aquí -->
+                    <div class="carousel">
+                        <ol role="list" width="2310px">
+                            <% for (let i=0; i < (relatedBooks.length>= 4 ? 4 : relatedBooks.length); i++) {
+                                if (relatedBooks[i].id != currentBook.id && relatedBooks[i].category ==
+                                currentBook.category) { %>
+                                <!-- Verifica que el libro no sea el mismo -->
+                                <li class="carouselCard" role="listitem" style="width: 150px; margin-left: 15px;">
+                                    <div>
+                                        <a href="/products/details/<%= relatedBooks[i].id %>"
+                                            style="text-decoration: none; text-decoration-style: none;">
+                                            <div>
+                                                <img src="/images/products/<%= relatedBooks[i].img %>" alt=""
+                                                    style="max-height: 150px;">
+                                            </div>
+                                        </a>
+                                        <a href="/products/details/<%= relatedBooks[i].id %>">
+                                            <div class="tituloLibroDetail">
+                                                <%= relatedBooks[i].title %>
+                                            </div>
+                                            <div class="rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <div class="reviews">318 reviews</div>
+                                            <div class="precio">$ <%= relatedBooks[i].price %>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <% } } %>
+                        </ol>
+                    </div>
+
+                    <!-- Pop-ups -->
+                    <div id="popup" class="popup" >
+                        <span class="popup-message"></span>
+                    </div>
+
+                    <div id="popupError" class="warning-popup">
+                        <span class="popup-message"></span>
+                    </div>
+                </main>
+                <!-- Footer Uli -->
+                <div onclick="pressButton(event)">
+                    <%- include('partials/footer.ejs') %>
+
+                        <%- include('partials/lowerFooter.ejs') %>
+
+                            <%- include('partials/quienesSomos.ejs') %>
+
+                                <%- include('partials/trabaja.ejs') %>
+                                    <%- include('partials/contacto.ejs') %>
+                                        <%- include('partials/terminos.ejs') %>
+                                            <%- include('partials/cookies.ejs') %>
+                </div>
+
+                <script src="/js/js-footer.js"></script>
+                <% if(!locals.isAdmin) { %> 
+                <script src="/js/scriptsProductDetailCOPIA.js"></script>
+                <% } %>
+                <script src="/js/js-productDetail.js" data-books="<%= JSON.stringify(relatedBooks) %>"></script>
+              
+                    
+
+    </body>
+
+</html>

@@ -1,0 +1,578 @@
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4efe4;
+    padding: 10px;
+    
+}
+
+header .navBar {
+   
+    display: flex;
+    justify-content: center;
+    flex-basis: 200px;
+    flex-grow: 4;
+}
+
+header .navBar .searchBar {
+    display: flex;
+    width: 100%;
+    
+    height: 30px;
+   padding-right: 32px;
+   padding-left: 10px;
+
+}
+
+
+header .navBar .fa-magnifying-glass {
+    position: absolute;
+    right: 1rem;
+    top: 0.40rem;
+}
+
+header .contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 350px; 
+}
+
+
+
+
+header .logo {
+    width: 20%;
+    max-width: 100px;
+    max-height: 100px;
+    order: -1;
+}
+
+header .searchBar {
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+header .hamburgesa {
+    order: 1;
+}
+
+header .userIcon {
+    order: 1;
+}
+
+.banner .bannerImg {
+    width: 100%;
+    position: relative;
+    top: -4px;
+}
+
+
+
+  .lowerNavBar {
+    display: none;
+  }
+
+  .enlaces {
+    display: flex;
+   justify-content: space-around;
+   list-style: none;
+   flex-grow: 3;
+   height: 50px;
+   text-align: center;
+   font-size: 17px;
+   
+}
+
+.lowerNavBar .enlaces a {
+    text-decoration: none;
+    justify-content: center;
+  
+   
+}
+
+.carrito {
+    text-decoration: none;
+    color: black;
+}
+
+.liHeader {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    background-color: #C9E4CA;
+    
+}
+
+.liHeader:hover {
+    background-color: #3B6064;
+    transition: 0.3s;
+    
+}
+
+.liHeader:hover a{
+    color: white;
+    transition: 0.3s;
+}
+
+/* MAIN */
+
+.carouselContainer .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.carouselContainer .carousel .card {
+    border: 1px solid rgb(198, 198, 198);
+    height: 300px; /* esto cambia en responsive */
+    width: 150px; /* esto cambia en responsive */
+    border-radius: 5px;
+    position: relative;
+    /*  z-index: -1;  */
+}
+
+.carouselContainer .carousel .card:hover {
+    box-shadow: 5px 5px 15px #afafaf;
+    transition: 0.2s;
+   
+    
+}
+
+.carouselContainer .carousel .card .cardTop {
+    background-color: #e6fcff;
+    height: 75px; /* esto cambia en responsive */
+    position: relative;
+}
+
+.carouselContainer .carousel .card .pastelCeleste {
+    background-color: #e6fcff;
+}
+
+.carouselContainer .carousel .card .pastelAmarillo {
+    background-color: #fffde6;
+}
+
+.carouselContainer .carousel .card .pastelRojo {
+    background-color: #ecc8c8;
+}
+
+.carouselContainer .carousel .card .pastelVioleta {
+    background-color: #e7e6ff;
+}
+
+.carouselContainer .carousel .card .pastelVerde {
+    background-color: #c8f2cd;
+}
+
+.carouselContainer .carousel .card .pastelGris {
+    background-color: #8f8f8f;
+}
+
+.carouselContainer .carousel .card .pastelAzul {
+    background-color: #8383ac;
+}
+
+.carouselContainer {
+    padding-top: 40px;
+    padding-left: 40px;
+
+}
+
+.bookCover {
+    border-radius: 3px;
+    position: absolute;
+    top: 25px; /* esto cambia en responsive */
+    right: 26px; /* esto cambia en responsive */
+    width:65%;
+}
+
+
+
+.cardSub {
+    font-size: 25px; /* esto cambia en responsive */
+    padding-left: 20px;
+    padding-top: 15px;
+
+}
+
+.cardBottom {
+    position: absolute;
+    bottom: 60px; /* esto cambia en responsive */
+    left: 15px; /* esto cambia en responsive */
+}
+
+.tituloLibro {
+    font-size: 15px;
+}
+.autorLibro {
+    font-size: 12px;
+    color: #55828B;
+}
+
+.precioLibro {
+    font-weight: bold;
+}
+
+.botonComprar {
+    position: absolute;
+    right: 45px; /* esto cambia en responsive */
+    width: 55px; /* esto cambia en responsive */
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: rgb(211, 232, 226);
+    bottom: 10px; /* esto cambia en responsive */
+    padding: 5px;
+    cursor:pointer;
+}
+
+.botonComprar:hover {
+    background-color: rgb(201, 231, 222);
+    border: 1px solid rgb(195, 195, 195);
+}
+
+.cardResponsiveTablet {
+    display: none;
+}
+
+.cardResponsiveDesktop {
+    display: none;
+}
+
+.cardResponsive1100 {
+    display: none;
+}
+
+.comprar {
+    display: none;
+}
+
+
+.carouselContainer {
+    position: relative;
+    padding-left: 0px;
+    padding-top: 20px;
+/*     border: 3px solid red; */
+}
+
+
+.fa-circle-chevron-left {
+    color:#3B6064;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    font-size: 35px;
+    bottom: 135px;
+    left: 25px; /* esto cambia en responsive */
+    width: 50px;
+    z-index: 1; /* esto cambia en responsive */
+}
+
+.fa-circle-chevron-right {
+    color:#3B6064;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    font-size: 35px;
+    bottom: 135px;
+    right: 25px; /* esto cambia en responsive */
+    width: 50px;
+    z-index: 1; /* esto cambia en responsive */
+}
+
+
+
+.fa-circle-chevron-left:hover {
+    color: #548086;
+    transition: 0.1s;
+}
+
+.fa-circle-chevron-right:hover {
+    color: #548086;
+    transition: 0.1s;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(211, 211, 211);
+    margin-top: 20px;
+    height: 200px;
+    background-color: #364958;
+    padding: 20px;
+    justify-content:space-around;
+    position: relative;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(168, 188, 167);
+}
+
+footer a:hover {
+    color: rgb(255, 255, 255);
+    transition: 0.2s;
+ }
+
+footer h3 {
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    line-height: 30px;
+}
+
+footer .cardsFooter {
+    width: 200px;
+  
+  
+}
+
+footer .trustFooter {
+    width: 200px;
+
+}
+
+footer .mediaFooter {
+    width: 170px;
+}
+
+footer .bannersFooter {
+    display: none;
+}
+
+.lowerFooter {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #203b50;
+    justify-content: space-around;
+}
+
+.lowerFooter .logoTrust {
+    width: 50px;
+}
+
+.lowerFooter .logoSocial {
+    width: 140px;
+}
+
+.lowerFooter .logoCards {
+    width: 140px;
+}
+
+/* MEDIA RULES */
+
+
+@media screen and (min-width: 560px) {
+
+
+    header .hamburgesa {
+        display: none;
+    }
+
+    .lowerNavBar {
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+    
+      } 
+
+      body{
+        padding-top: 50px;
+      }
+
+      .enlaces li{
+        margin-top: 0;
+        height: 50px;
+      }
+
+      .cardResponsiveTablet {
+        display: block;
+    }
+
+    .fa-circle-chevron-left {
+   
+        left: -2px; /* esto cambia en responsive */
+        bottom: 150px;
+        z-index: 0;
+  
+    }
+    
+    .fa-circle-chevron-right {
+  
+        right: -2px; /* esto cambia en responsive */
+        bottom: 150px;
+        z-index: 0;
+      
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 650px) {
+
+    .carouselContainer .carousel .card {
+       
+        height: 360px; /* esto cambia en responsive */
+        width: 180px; /* esto cambia en responsive */
+    
+    }
+
+    .bookCover {
+       
+        right: 31px; /* esto cambia en responsive */
+        
+    }
+
+    .botonComprar {
+        
+        right: 61px; /* esto cambia en responsive */
+
+    }
+
+    .tituloLibro {
+        font-size: 19px;
+    }
+
+    .autorLibro {
+        font-size: 17px;
+    }
+    
+    .precioLibro {
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    .fa-circle-chevron-left {
+   
+        bottom: 170px;
+  
+    }
+    
+    .fa-circle-chevron-right {
+  
+        bottom: 170px;
+      
+    }
+
+    .cardSub {
+        font-size: 35px;
+        
+    }
+
+    footer .bannersFooter {
+        display: grid;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-gap: 10px;
+        position:absolute;
+        right: 25px;
+    
+    }
+
+    .lowerFooter {
+        display: none;
+    }
+
+    footer {
+        height: 270px;
+    }
+
+    footer .equipo {
+        position: absolute;
+        left: 25px;
+    }
+ footer h3 {
+    font-size: 28px;
+ }
+
+ footer .liFooter {
+    font-size: 18px;
+ }
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 790px) {
+
+    .cardResponsiveDesktop {
+        display: block;
+    }
+
+    .botonComprar {
+        
+        right: 29px; /* esto cambia en responsive */
+        width: 120px; 
+
+    }
+
+    .material-icons-outlined {
+        display: none;
+    }
+
+    .comprar {
+        font-size: 17px;
+        font-weight: bolder;
+        display: block;
+    }
+ 
+}
+@media screen and (min-width: 1100px) {
+
+    .cardResponsive1100 {
+        display: block;
+    }
+
+
+ 
+}
+
+.imagenlogo {
+    width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    order: -1;
+ }
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body class="createBody editBody">
+
+        <%- include('partials/header.ejs') %> 
+        <%- include('partials/lowerNavBar.ejs') %>
+
+        <main class="mainform editMain">
+            
+            <h1 class="createTitle">Cargar Libro Nuevo</h1>
+            
+            <div class="formContainer editFormContainer">
+                <form method="POST" action="/products/create" class="formulario-crear" enctype="multipart/form-data">
+                    
+                    <div class="errores">
+                        <ul></ul>
+                    </div>
+                 
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Titulo en Español</label>
+                        <input type="text" name="titleEsp" id=""
+                            class="titleEsp inputForm  <%= locals.errors && errors.titleEsp ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.titleEsp : null %>">
+
+                        <% if (locals.errors && errors.titleEsp) {%>
+                            <div class="text_errors">
+                                <%= errors.titleEsp.msg %>
+                            </div>
+
+                            <% } %>
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Color de Encabezado</label>
+                        <select name="color"
+                            class="color inputForm  <%= locals.errors && errors.color ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.color : null %>">
+
+                            <option value="">Elegi un color de tarjeta</option>
+
+                            <% let colours=[ 'pastelCeleste' , 'pastelAmarillo' , 'pastelRojo' , 'pastelVioleta'
+                                , 'pastelVerde' , 'pastelGris' , 'pastelAzul' , ] %>
+
+
+
+                                <% for (const oneColour of colours) { %>
+                                    <option value="<%= oneColour %>" <%=locals.oldData && (oneColour==oldData.color)
+                                        ? 'selected' : null %>
+                                        > <%= oneColour %>
+                                    </option>
+                                    <% } %>
+
+                        </select>
+
+                        <% if (locals.errors && errors.color) {%>
+                            <div class="text_errors">
+                                <%= errors.color.msg %>
+                                    <% } %>
+
+
+
+                            </div>
+
+                            <div class="formFields">
+
+                                <label class="labelForm" for="">Autor/a</label>
+                                <input type="text" name="author" id=""
+                                    class="autor inputForm  <%= locals.errors && errors.author ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.author : null %>">
+
+                                <% if (locals.errors && errors.author) {%>
+                                    <div class="text_errors">
+                                        <%= errors.author.msg %>
+                                    </div>
+
+                                    <% } %>
+                            </div>
+
+                            <div class="formFields">
+
+                                <label class="labelForm" for="">Categoria</label>
+                                <select name="category"
+                                    class="categoria inputForm  <%= locals.errors && errors.category ? 'is-invalid' : null %>"
+                                    value="<%= locals.oldData ? oldData.category : null %>">
+
+                                    <option value="">Elegi una categoría</option>
+
+                                    <% let categories=[ 'Best Sellers' , 'Fiction' , 'Science' ] %>
+
+                                        <% for (const oneCategory of categories) { %>
+                                            <option value="<%= oneCategory %>" <%=locals.oldData &&
+                                                (oneCategory==oldData.category) ? 'selected' : null %>
+                                                > <%= oneCategory %>
+                                            </option>
+                                            <% } %>
+
+                                </select>
+
+                                <% if (locals.errors && errors.category) {%>
+                                    <div class="text_errors">
+                                        <%= errors.category.msg %>
+                                            <% } %>
+
+
+                                    </div>
+
+                                    <!--  -->
+                                    <div class="formFields">
+
+                                        <label class="labelForm" for="">Descripción</label>
+                                        <input type="text" name="description" id=""
+                                            class="descripcion inputForm  <%= locals.errors && errors.description ? 'is-invalid' : null %>"
+                                            value="<%= locals.oldData ? oldData.description : null %>">
+
+                                        <% if (locals.errors && errors.description) {%>
+                                            <div class="text_errors">
+                                                <%= errors.description.msg %>
+                                            </div>
+
+                                            <% } %>
+                                    </div>
+
+
+                                    <div class="formFields">
+
+                                        <label class="labelForm" for="">Precio</label>
+                                        <input type="number" step="0.01" name="price" id=""
+                                            class="precio inputForm  <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+                                            value="<%= locals.oldData ? oldData.price : null %>">
+
+                                        <% if (locals.errors && errors.price) {%>
+                                            <div class="text_errors">
+                                                <%= errors.price.msg %>
+                                            </div>
+
+                                            <% } %>
+                                    </div>
+
+                                    <div class="formFields">
+
+                                        <label class="labelForm" for="">Imagen</label>
+                                        <input class="img inputForm inputNoBorder" type="file" name="img" id="">
+
+                                        <% if (locals.errors && errors.img) { %>
+
+                                            <div class="text_errors">
+                                                <%= errors.img.msg %>
+                                            </div>
+
+                                            <% } %>
+
+                                    </div>
+                                    <div class="formFields">
+
+                                    <label class="labelForm" for="">Stock</label>
+                                    <input type="number" name="stock" id=""
+                                        class="stock inputForm  <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
+                                        value="<%= locals.oldData ? oldData.stock : null %>">
+
+                                    <% if (locals.errors && errors.stock) {%>
+                                        <div class="text_errors">
+                                            <%= errors.stock.msg %>
+                                        </div>
+
+                                        <% } %>
+                                    </div>
+                                    <div class="buttonFormContainer">
+                                        <button class="buttonForm" type="submit">Submit</button>
+                                        <button class="buttonForm" type="reset">Reset</button>
+                                    </div>
+
+                                    <!-- Los nombres de los campos son los mismos que en la DB y NUNCA le damos al usuario la posiblidad de crear su ID eso lo hago yo. -->
+
+
+                </form>
+
+            </div>
+
+        </main>
+
+        <!-- <script src="/js/validationcreate-front.js"></script> -->
+
+    </body>
+
+</html>

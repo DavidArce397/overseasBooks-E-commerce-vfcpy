@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body>
+
+        <%- include('partials/header.ejs') %>
+
+            <%- include('partials/lowerNavBar.ejs') %>
+
+                <%- include('partials/banner.ejs') %>
+
+                    <main>
+
+                        
+                        <% for (let i=0; i< categories.length; i++) {%> <!-- por cada cat mostra ESTO -->
+
+                            <section class="cards">
+
+                                <h2 class="cardSub" <% if (categories[i]=="Fiction" ) { %>
+                                    id="fiction"
+                                    <% } else if (categories[i]=="Science" ) {%>
+                                        id="science"
+                                        <% } else if (categories[i]=="Best Sellers" ) {%>
+                                            id="bestSellers"
+                                            <% } %>
+                                                >
+
+                                                <%= categories[i] %> <!-- aca mete la CAT que sale del array -->
+
+                                </h2>
+
+                                <article class="carouselContainer">
+<!-- 
+                                    <div class="arrows">
+                                        <i class="fa-solid fa-circle-chevron-left"></i>
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </div> -->
+
+                                    <div class="carousel">
+
+                                        <% for (let j=0; j< allBooks.length; j++) {%>
+                                            <!-- por cada CAT ahora itera sobre el mopnton de libros q pase  -->
+
+                                            <% if (allBooks[j].category==categories[i]) {%>
+                                                <!-- si algun libro es igual a la CAT que estoy iterando -->
+
+                                                <div class="card">
+
+                                                    <div class="cardTop <%= allBooks[j].color %>">
+                                                        <a href="products/details/<%= allBooks[j].id %>"><img
+                                                                class="bookCover"
+                                                                src="/images/products<%= allBooks[j].img %>"
+                                                                alt="libro"></a>
+
+                                                    </div>
+
+                                                    <div class="cardBottom">
+
+                                                        <p class="tituloLibro">
+                                                            <%= allBooks[j].titleEsp %>
+                                                        </p>
+                                                        <p class="autorLibro">
+                                                            <%= allBooks[j].author %>
+                                                        </p>
+                                                        <p class="precioLibro">
+                                                            <%= allBooks[j].price %>
+                                                        </p>
+
+
+                                                    </div>
+
+
+                                                    <div class="botonesHome">
+                                                        <!-- Boton Carrito -->
+                                                        <!-- Modificar css para responsive -->
+                                                        <button class="botonCarrito"
+                                                            id="<%= allBooks[j].id %>">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                            <span class="añadirACarritoTexto">Añadir al carrito</span>
+                                                        </button>
+    
+                                                        <!-- Boton Compra -->
+                                                        <button class="botonCompra" id="<%= allBooks[j].id %>">
+                                                            <span class="material-icons-outlined">
+                                                                shopping_bag
+                                                            </span><span class="comprar">Comprar</span>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+
+                                                <%}%>
+                                                    <%}%>
+
+                                    </div>
+
+                                </article>
+
+                            </section>
+
+                            <%}%>
+
+                                <!-- Pop-ups -->
+                                <div id="popup" class="popup">
+                                    <span class="popup-message"></span>
+                                </div>
+
+                                <div id="popupError" class="warning-popup">
+                                    <span class="popup-message"></span>
+                                </div>
+
+
+                    </main>
+                    <div onclick="pressButton(event)">
+                        <%- include('partials/footer.ejs') %>
+
+                            <%- include('partials/lowerFooter.ejs') %>
+
+                                <%- include('partials/quienesSomos.ejs') %>
+
+                                    <%- include('partials/trabaja.ejs') %>
+                                        <%- include('partials/contacto.ejs') %>
+                                            <%- include('partials/terminos.ejs') %>
+                                                <%- include('partials/cookies.ejs') %>
+                    </div>
+
+
+
+                    <script src="/js/js-footer.js"></script>
+                    <% if(!locals.isAdmin) { %> 
+                        <script src="/js/scriptsHome.js"></script>
+                    <% } %>
+                 
+
+    </body>
+
+</html>

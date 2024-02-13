@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head.ejs') %>
+     
+<body class="body-login">
+    <%- include('partials/header.ejs') %>
+ <form class="formulario" method="POST" action="/user/register" enctype="multipart/form-data">
+
+     <h1 class="h1-login">Registrate</h1>
+     <div class="contenedor">
+         
+         <div class="errores">
+             <ul></ul>
+         </div>
+         
+     <div class="input-contenedor">
+        <i class="fas fa-user icon"></i>
+        <input class="nombre input-register" type="text" placeholder="Nombre" name="nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
+    </div>
+        <% if (locals.errors && errors.nombre) { %>
+            <div class="text-danger">
+                <%= errors.nombre.msg %>
+            </div>
+            <% } %>
+
+    <div class="input-contenedor">
+        <i class="fas fa-user icon"></i>
+        <input class="apellido input-register" type="text" placeholder="Apellido" name="apellido" value="<%= locals.oldData ? oldData.apellido : null %>">
+    </div>
+    <% if (locals.errors && errors.apellido) { %>
+        <div class="text-danger">
+            <%= errors.apellido.msg %>
+        </div>
+        <% } %>
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input class="mail input-register" type="text" placeholder="Correo Electronico" name="email" value="<%= locals.oldData ? oldData.email : null %>">
+         </div>
+         <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+                <%= errors.email.msg %>
+            </div>
+            <% } %>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input class="password input-register" type="password" placeholder="Contraseña" name="password">
+         <div style="padding: 10px;">
+             <i class="fa-solid fa-eye" id="eye-icon" style="color: #999; opacity: 0;" onclick="showPassword()" onmouseover="document.querySelector('#eye-icon').style.opacity = 1;" onmouseout="document.querySelector('#eye-icon').style.opacity = 0;"></i>
+         </div>
+        </div>
+         <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+                <%= errors.password.msg %>
+            </div>
+            <% } %>
+
+         <div class="input-contenedor">
+            <i class="fa-solid fa-image icon"></i>
+             <input class="img input-register" type="file" placeholder="imagen" name="avatar" value="<%= locals.oldData ? oldData.avatar : null %>">
+         </div>
+
+         <% if (locals.errors && errors.avatar) { %>
+            <div class="text-danger">
+                <%= errors.avatar.msg %>
+            </div>
+            <% } %>
+
+         <input type="submit" value="Registrate" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         <p>¿Ya tienes una cuenta?<a class="link" href="/user/login">Iniciar Sesion</a></p>
+     </div>
+    </form>
+  <!-- Footer Uli -->
+  <div onclick="pressButton(event)">
+    <%- include('partials/footer.ejs') %>
+
+        <%- include('partials/lowerFooter.ejs') %>
+
+        <%- include('partials/quienesSomos.ejs') %>
+
+        <%- include('partials/trabaja.ejs') %>
+        <%- include('partials/contacto.ejs') %>
+        <%- include('partials/terminos.ejs') %>
+        <%- include('partials/cookies.ejs') %>
+    </div>
+
+    <!-- Pop-ups -->
+    <div id="popup" class="popup">
+        <span class="popup-message"></span>
+    </div>
+
+    <div id="popupError" class="warning-popup">
+        <span class="popup-message"></span>
+    </div>
+
+    <!-- <script src="/js/validationregister-front.js"></script> -->
+    <script src="/js/js-footer.js"></script>
+    <!-- Para mostrar contraseña -->
+    <script type="text/javascript">
+        function showPassword() {
+            var x = document.querySelector(".password.input-register");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        };
+    </script>
+</body>
+</html>

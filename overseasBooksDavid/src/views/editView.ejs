@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body class="editViewBody">
+
+    <%- include('partials/header.ejs') %> 
+
+<!--              <%- include('partials/lowerNavBar.ejs') %>  -->
+
+           <header>
+            <h2 class="editViewSubtitle">Hace click en un libro para editarlo</h2>
+           </header>
+
+                    <main>
+
+                        <% for (let i=0; i< categories.length; i++) {%> <!-- por cada cat mostra ESTO -->
+
+                            <section class="cards">
+
+                                <h2 class="cardSub">
+
+        <a href="/cart" class="carrito"><span class="material-icons">
+            shopping_cart
+            </span></a>
+            
+                                    <%= categories[i] %> <!-- aca mete la CAT que sale del array -->
+
+                                </h2>
+
+                                <article class="carouselContainer">
+
+                                    <div class="arrows">
+                                        <i class="fa-solid fa-circle-chevron-left"></i>
+                                        <i class="fa-solid fa-circle-chevron-right"></i>
+                                    </div>
+
+                                    <div class="carousel">
+
+                                        <% for (let j=0; j< allBooks.length; j++) {%>
+                                            <!-- por cada CAT ahora itera sobre el mopnton de libros q pase  -->
+
+                                            <% if (allBooks[j].category==categories[i]) {%>
+                                                <!-- si algun libro es igual a la CAT que estoy iterando -->
+
+                                                <div class="card editViewCards">
+
+                                                    <div class="cardTop <%= allBooks[j].color %>">
+                                                        <a href="/products/edit/<%= allBooks[j].id %>"><img class="bookCover"
+                                                                src="/images/products/<%= allBooks[j].img %>" alt="libro"></a>
+
+                                                    </div>
+
+                                                    <div class="cardBottom">
+
+                                                        <p class="tituloLibro">
+                                                            <%= allBooks[j].titleEsp %>
+                                                        </p>
+                                                        <p class="autorLibro">
+                                                            <%= allBooks[j].author %>
+                                                        </p>
+                                                        <p class="precioLibro">
+                                                            <%= allBooks[j].price %>
+                                                        </p>
+
+                                                    </div>
+
+                                                   <!--  <a class="enlaceComprar" href="/shoppingcart2/<%=allBooks[j].id%>"><button
+                                                            class="botonComprar"><span class="material-icons-outlined">
+                                                                shopping_bag
+                                                            </span><span class="comprar">Comprar</span>
+                                                        </button></a> -->
+
+                                                </div>
+
+                                                <%}%>
+
+                                                    <%}%>
+
+                                    </div>
+
+                                </article>
+
+                            </section>
+
+                            <%}%>
+
+                    </main>
+
+                 <!--    <%- include('partials/footer.ejs') %>
+
+                        <%- include('partials/lowerFooter.ejs') %> -->
+
+    </body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/header.ejs') %>
+
+            <%- include('partials/lowerNavBar.ejs') %>
+    <main class="main">
+        <div class="h4yxContenedor">
+          <h3>Carrito de compras</h3>
+          <a href="/"><i class="fa-solid fa-x laCruz"></i></a>
+        </div>
+      
+          <div class="prodYSubContenedor">
+              <p class="prod p">PRODUCTO</p>
+              <p class="sub p">SUBTOTAL</p>
+          </div>
+      
+          <article class="productos">
+            <div class="imgYDescripContenedor">
+              <div class="imagen">
+                  <img style="width:200px;"src="/images/products/<%=buy.img %>">
+              </div>
+              <div class="descripcionYPrecio">
+                  <p class="descripcion p"><%= buy.titleEsp%></p>
+                  <p class="p">$<span class="precio"><%= buy.price%></span></p>
+              </div>
+            </div>
+            <a href = '/products/cart' class="fa-solid fa-trash"></a>
+          </article>
+          <article>
+          </article>
+          <article>
+            <div class="totalprecio">
+                <h3>Total:</h3>
+                <h3>$<%= buy.price%></h3>
+            </div>
+            <article>
+              <!-- <p class="textocp">Entregas para el codigo postal: <input type="number" placeholder="ej. 1426"></p> -->
+              <h4 class="envio"><i class="fa-solid fa-truck"></i> Envio a domicilio</h4>
+              <div class="opcion1Y2">
+                  <div class="opcion1">
+                      <div class="iconoYopcion">   
+                          <input type="radio" name="opcion" class="botonopcion1">
+                          <div class="opcion">
+                              <h4>Opcion 1</h4>
+                              <p>Llega el viernes</p>
+                          </div>            
+                      </div>
+                      <h4 class="precioenvio">$<span class="precioenvio1"><%=buy.shippingPrice1 %></span></h4>
+                  </div>
+                  <div class="opcion2">
+                      <div class="iconoYopcion">   
+                          <input type="radio" name="opcion" class="botonopcion2">
+                          <div class="opcion">
+                              <h4>Opcion 2</h4>
+                              <p>Llega el martes</p>
+                          </div>            
+                      </div>
+                      <h4 class="precioenvio">$<span class="precioenvio2"><%=buy.shippingPrice2 %></span></h4>
+                  </div>
+              </div>
+              <h4 class="retiro"><i class="fa-solid fa-location-dot"></i></i> Retirar por</h4>
+              <div class="opcion3">
+                  <div class="iconoYopcion">   
+                      <input type="radio" name="opcion" class="retiro1">
+                      <div class="opcion">
+                          <h4>Punto de retiro</h4>
+                          <p>Retiras el sabado</p>
+                      </div>            
+                  </div>
+                  <h4 class="precioretiro">$<span class="precioretiro1"><%=buy.pickingPrice %></span></h4>
+              </div>
+          </article>
+          <article>
+              <div class="totalprecio">
+                  <h3>Total:</h3>
+                  <h3 class="total">$<span class="total1"><%=buy.price %></span></h3>
+              </div>
+            <div class="botoncentrado"><button type="submit" class="boton"><h4 class="textboton">INICIAR COMPRA</h4></button></div>
+            <a href="/"><p class="vermas" p>VER MAS PRODUCTOS</p></a>
+        </article>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    
+    <%- include('partials/lowerFooter.ejs') %>
+    <script src="/js/js-front.js"></script>
+</body>
+</html>

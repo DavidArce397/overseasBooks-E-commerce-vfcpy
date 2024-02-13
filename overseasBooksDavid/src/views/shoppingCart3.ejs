@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+<body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/lowerNavBar.ejs') %>
+
+  <main class="main">
+
+      <article>
+        <div class="h4yxContenedor">
+          <h3>Carrito de compras</h3>
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </article>
+      <article>
+        <div class="prodYSubContenedor" style="display: flex; justify-content: center; align-items: center;">
+          <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <th class="prod p" style="padding: 8px;">#</th>
+              <th class="prod p" style="padding: 8px;">PRODUCTO</th>
+              <th class="prod p" style="padding: 8px;">IMAGEN</th>
+              <th class="prod p" style="padding: 8px;">PRECIO</th>
+              <th class="prod p" style="padding: 8px;">CANTIDAD</th>
+              <th class="prod p" style="padding: 8px;">SUBTOTAL</th>
+            </thead>
+            <tbody class="cartRows">
+              <!-- Aquí se inserta contenido de acuerdo a script de cart.js -->
+            </tbody>
+           
+          </table>
+          <div class="totalContainer"><h2>TOTAL:</h2><span class="totalAmount">$0</span></div>
+        </div>
+      </article>
+     
+
+      <form  class="card-body" id="checkoutCart">
+        <div class="fieldsContainer">
+          <!-- Tipo de envío -->
+          <div>
+            <label for="tipoEnvio">Tipo de Envío</label>
+            <select name="shipping_method" id="shipping_method" required>
+              <option value="" selected>Elegir...</option>
+              <option value="cadete">Cadete</option>
+              <option value="correoArgentino">Correo Argentino</option>
+              <option value="andreani">Andreani</option>
+              <option value="DHL">DHL</option>
+            </select>
+            <div class="invalid-feedback">
+              Elija un tipo de envío.
+            </div>
+          </div>
+
+          <!-- Método de pago -->
+          <div>
+            <label for="metodoPago">Método de Pago</label>
+            <select name="payment_method" id="payment_method" required>
+              <option value="" selected>Elegir...</option>
+              <option value="tarjetaCredito">Tarjeta de crédito</option>
+              <option value="tarjetaDebito">Tarjeta de débito</option>
+              <option value="transferencia">Transferencia bancaria</option>
+              <option value="efectivo">Efectivo</option>
+            </select>
+            <div class="invalid-feedback">
+              Elija un método de pago.
+            </div>
+          </div>
+        </div>
+
+        <div class="botoncentrado"><button type="submit" class="boton"><h4 class="textboton" id="botonCompraCarrito">INICIAR COMPRA</h4></button></div>
+        <a href="/"><p class="vermas p">VER PRODUCTOS</p></a>
+      </form>
+
+       <!-- Pop-ups -->
+       <div id="popup" class="popup">
+        <span class="popup-message"></span>
+    </div>
+
+    <div id="popupError" class="warning-popup">
+        <span class="popup-message"></span>
+    </div>
+
+
+      <%- include('partials/footer.ejs') %>
+      <%- include('partials/lowerFooter.ejs') %>
+
+  </main>
+
+  <script src="/js/cart.js"></script>
+
+</body>
+</html>

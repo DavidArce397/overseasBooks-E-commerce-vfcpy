@@ -1,0 +1,144 @@
+<header>
+    <div class="hamburgesa">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <nav class="navBar">
+        <form class="contenedor" action="/products/search" method="POST">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <input name="search" class="searchBar" type="text" placeholder="Buscar...">
+                <button type="submit"  style="border: none; background-color: transparent; position: relative; right: 22px;">
+                    <i class="fa-solid fa-magnifying-glass" style="color: black!important;"></i>
+                </button>
+            </div>
+        </form>
+    </nav>
+
+
+    <a href="/" class="imagenlogo" style="width:200px;">
+        <img class="logo" src="/images/logo.png" alt="1-modified-1">
+    </a>
+
+   
+
+    <% if( !locals.isLogged ) { %>
+        <nav class="linksNavbarMenu">
+            <ul>
+                <li>                    
+                    <a href="/products/cart" class="carrito"><span class="material-icons" style="position: relative; left: 28px;">shopping_cart</span>
+                        <p class="productosEnCarrito" id="productosEnCarrito" style="position: relative;top: -20px;left:15px; "></p>
+                    </a>
+                    <a href="/products/cart" class="textdecoration">
+                        <p>Compra</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/register" class="login"><span class="fa-regular fa-user"></span></a>
+                    <a href="/user/register" class="textdecoration">
+                        <p>Registrate</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/login" class="login"><span class="material-icons">person</span></a>
+                    <a href="/user/login" class="textdecoration">
+                        <p>Inicia sesión</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <% } else { %>
+
+            <% if( !locals.isAdmin ) { %>
+
+                <nav class="navbarUserNotAdm">
+                    <ul>
+                        <li>
+                            <a href="/products/cart" class="carrito"><span class="material-icons" style="position: relative; left: 25px;">shopping_cart</span>
+                                <p class="productosEnCarrito" id="productosEnCarrito" style="position: relative;top: -20px;left:15px; "></p>
+                            </a>
+                            <a href="/products/cart" class="textdecoration">
+                                <p>Compra</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="profile">
+                                <a href="/user/profile"><span>
+                                        <img src="/images/avatars/<%= locals.userLogged.avatar != null && locals.userLogged.avatar !== '' ? locals.userLogged.avatar : 'blank-profile-picture.png' %>"
+                                            alt="Foto de perfil">
+                                    </span></a>
+                                <span class="username">
+                                    <a href="/user/profile" class="textdecoration">
+                                        <p>Hi, <%= locals.userLogged.first_name %>
+                                        </p>
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <!-- Botón Logout -->
+                            <a href="/user/logout"
+                                style="display: flex; justify-content : center; align-items: center; text-decoration: none; " class="textdecoration">
+                                <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 4px;"></i>
+                                <p>Log out</p>
+                            </a>
+
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+
+
+                <% } else { %>
+
+                    <a href="/products/create" class="carrito"><span class="fa-regular fa-square-plus">
+
+                        </span></a>
+                    <a href="/products/create" class="textdecoration">
+                        <p>Crea</p>
+                    </a>
+
+                    <a href="/products/edit/" class="carrito"><span class="fa-regular fa-pen-to-square">
+
+                        </span></a>
+                    <a href="/products/edit/" class="textdecoration">
+                        <p>Edita</p>
+                    </a>
+
+                    <a href="/user/profile"><span>
+                            <img src="/images/avatars/<%= locals.userLogged.avatar != null && locals.userLogged.avatar !== '' ? locals.userLogged.avatar : 'blank-profile-picture.png' %>"
+                                style="width:40px;">
+                        </span></a>
+                    <a href="/user/profile" class="textdecoration">
+                        <p>Hi, <%= locals.userLogged.first_name %>
+                        </p>
+                    </a>
+
+                    <!-- Botón Logout -->
+                    <div>
+                        <a href="/user/logout"
+                            style="display: flex; justify-content : center; align-items: center; text-decoration: none; ">
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 10px; "></i>
+                            <p style="color: black;">Log out</p>
+                        </a>
+                    </div>
+                    <% } %>
+                        <% } %>
+
+                            <script src="/js/searchBar.js"></script>
+                            <!-- Agregar archivo scripts.js en caso de ser necesario -->
+                            <script src="/js/scriptCantidadCarrito.js"></script>
+                            
+
+
+
+
+
+
+</header>

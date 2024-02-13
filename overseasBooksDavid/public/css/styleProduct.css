@@ -1,0 +1,519 @@
+/* * {
+    margin: 0px;
+    padding: 0px;
+} */
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Css Header Uli */
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: -8px !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4efe4;
+    padding: 10px;
+
+}
+
+header .navBar {
+
+    display: flex;
+    justify-content: center;
+    flex-basis: 200px;
+    flex-grow: 4;
+}
+
+header .navBar .searchBar {
+    display: flex;
+    width: 100%;
+
+    height: 30px;
+    padding-right: 32px;
+    padding-left: 10px;
+
+}
+
+
+header .navBar .fa-magnifying-glass {
+    position: absolute;
+    right: 1rem;
+    top: 0.40rem;
+}
+
+header .contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+
+
+
+header .logo {
+    width: 20%;
+    max-width: 100px;
+    max-height: 100px;
+    order: -1;
+}
+
+header .searchBar {
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+header .hamburgesa {
+    order: 1;
+}
+
+header .userIcon {
+    order: 1;
+}
+
+.banner .bannerImg {
+    width: 100%;
+    position: relative;
+    top: -4px;
+}
+
+
+
+.lowerNavBar {
+    display: none;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    flex-grow: 3;
+    height: 50px;
+    text-align: center;
+    font-size: 17px;
+    margin: 0px !important;
+    padding: 0px !important;
+
+}
+
+.lowerNavBar .enlaces a {
+    text-decoration: none;
+    justify-content: center;
+
+
+}
+
+.carrito {
+    text-decoration: none;
+    color: black;
+}
+
+.liHeader {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    background-color: #C9E4CA;
+
+}
+
+.liHeader:hover {
+    background-color: #3B6064;
+    transition: 0.3s;
+
+}
+
+.liHeader:hover a {
+    color: white;
+    transition: 0.3s;
+}
+
+
+/* Fin Header */
+
+
+body {
+
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Responsive 360 por 530 de alto */
+
+.columna-a-izquierda {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.imagenProducto {
+    max-width: 259px;
+    max-height: 390px;
+    margin: auto;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.compartirIcono {
+    padding: 0px;
+    height: 0px;
+    width: 0px;
+    margin-left: 10px !important;
+}
+
+
+
+.productTitle {
+    font-size: 25px;
+    text-align: center;
+}
+
+.contenedor .rating {
+    text-align: center;
+    margin-top: 4px;
+}
+
+
+.checked {
+    color: orange;
+}
+
+
+.format {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+}
+
+.fisico,
+.digital {
+    border: gray solid 0.5px;
+    width: 50%;
+    text-align: center;
+    padding: 15px;
+}
+
+.fisico:hover,
+.digital:hover {
+    background-color: #e4efe4;
+}
+
+.price {
+    margin-bottom: 2px;
+}
+
+.line {
+    border-bottom: 1px solid #DDD;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(221, 221, 221);
+}
+
+
+.deliveryLocation p i {
+    margin: 6px 6px 6px 0px !important;
+    box-sizing: border-box;
+}
+
+.stockDisponible {
+    font-weight: 600;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .9);
+    margin-bottom: 10px;
+}
+
+.divCantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #e4efe4;
+    border-radius: 6px;
+    color: rgba(0, 0, 0, .9);
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 400;
+    height: 50px;
+    line-height: 1;
+    padding: 16px 38px 16px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.cantidadTexto {
+    position: relative;
+    top: 2px;
+}
+
+.cantNumero {
+    font-weight: 600;
+    margin-left: 6px !important;
+    color: rgba(0, 0, 0, .9);
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cantNumero input {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cantDisponible {
+    color: rgba(0, 0, 0, .7);
+    margin-left: 16px !important;
+    max-width: 100%;
+    position: relative;
+    top: 1px;
+}
+
+divBotonCompra,
+.divBotonCarrito {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.botonCompra {
+    margin-top: 8px !important;
+    width: 100%;
+    position: relative;
+    background-color: #87BBA2;
+    border-color: transparent;
+    color: #0f1111;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.botonCarrito {
+    margin-top: 8px !important;
+    width: 100%;
+    position: relative;
+    background-color: #C9E4CA;
+    border-color: transparent;
+    color: #0f1111;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+
+
+.botonInterior,
+.botonCarritoInterior {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 16px;
+}
+
+
+.transaccionSegura {
+    border-bottom: #DDD solid 1px;
+    padding-bottom: 6px;
+}
+
+
+.resumenTitulo {
+    margin-top: 1px !important;
+    padding-bottom: 10px;
+    border-bottom: 0.2rem solid transparent;
+    border-bottom-width: 0.2rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    box-shadow: inset 0 -0.2rem 0 0 #3b6064;
+    color: #3b6064;
+    font-weight: 700;
+    border-bottom: 0;
+    border-bottom-width: 0px;
+    border-bottom-style: initial;
+    border-bottom-color: initial;
+    text-align: center;
+}
+
+
+
+.cajaResumen {
+    margin: 0 5px 10px 0 !important;
+    border-bottom: #DDD solid 1px;
+}
+
+.carousel h2 {
+    color: #0f1111;
+    font-size: 18px;
+    padding: 0 0 4px;
+}
+
+li.carouselCard::marker {
+    color: transparent;
+}
+
+.carousel {
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 5px 30px 0 !important;
+    border-bottom: #DDD solid 1px;
+}
+
+.carousel ol {
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.carousel a {
+    text-decoration: none;
+}
+
+.carousel .tituloLibro {
+    color: #007185;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.carousel .rating {
+    color: rgba(0, 0, 0, .9);
+    font-size: 14px;
+
+}
+
+.carousel .reviews {
+    color: #565959;
+    font-size: 13px;
+}
+
+.carousel .precio {
+    color: #0f1111;
+    font-size: 18px;
+}
+
+.pNegrita {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pNormal {
+    font-size: 15px;
+}
+
+
+
+.fa-solid.fa-lock {
+    color: gray;
+}
+
+.fa-solid.fa-truck,
+.fa-solid.fa-location-dot {
+    color: rgba(0, 0, 0, .70);
+}
+
+.fa-solid.fa-truck {
+    font-size: 15px;
+}
+
+.transaccionSegura span {
+    padding-left: 4px;
+}
+
+.material-symbols-outlined {
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 50%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .7);
+    font-size: 24px;
+    padding: 4px;
+    margin-right: 100px !important;
+}
+
+
+/* Media Query para 768px en adelante */
+
+@media (min-width: 768px) {
+
+    .carousel ol {
+        box-sizing: border-box;
+        padding-left: 0px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 5px 30px 0 !important;
+        border-bottom: #DDD solid 1px;
+        max-width: 780px;
+        max-height: 760px;
+    }
+
+    .format {
+        max-width: 780px;
+        max-height: 760px;
+    }
+
+    .contenedor {
+        max-width: 780px;
+        max-height: 760px;
+        margin: auto !important;
+    }
+
+    .resumenLibro {
+        max-width: 780px;
+        max-height: 760px;
+        margin: 15px 0;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+}
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(211, 211, 211);
+    margin-top: 20px !important;
+    margin: -8px !important;
+    height: 200px;
+    background-color: #364958;
+    padding: 20px;
+    justify-content: space-around;
+    position: relative;
+}

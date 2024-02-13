@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body class="createBody editBody">
+
+        <%- include('partials/header.ejs') %> 
+        <%- include('partials/lowerNavBar.ejs') %>
+
+        <main class = "mainform editMain">
+
+            <h1 class="createTitle">Editar Libro Existente</h1>
+            <% if (edit) { %>
+
+           
+            <div class="formContainer editFormContainer">
+                <form method="POST" action="/products/edit/<%= edit.id%>" class="formulario-crear" enctype="multipart/form-data">
+
+                    <div class="formFields editFormFields">
+                        <div class="editImageContainer">
+                        <img src="/images/products/<%=edit.img %>" alt="imagen" class="editImage">
+                    </div>
+                        <label class="labelForm" for="">Cambiar Imagen</label>
+                        <input class="inputForm inputNoBorder" type="file" name="img" id="" value="<%= edit.img %>">
+
+                    </div>
+
+                    <!-- <div class="formFields">
+
+                        <label class="labelForm" for="">Titulo en Inglés</label>
+                        <input class="inputForm editInput" type="text" name="titleEng" id="" value="<%= edit.titleEng %>">
+
+                    </div> -->
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Titulo en Español</label>
+                        <input class="inputForm" type="text" name="titleEsp" id="" value="<%= edit.title %>">
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Color de Encabezado Original</label>
+                        <input class="inputForm soloLectura" type="text" id="" readonly="true"
+                            value="<%= edit.color %>">
+                        <label class="labelForm" for="">Cambiar / Confirmar:</label>
+                        <select name="color" class="inputForm">
+                            <option value="pastelCeleste">Celeste</option>
+                            <option value="pastelAmarillo">Amarillo</option>
+                            <option value="pastelRojo">Rojo</option>
+                            <option value="pastelVioleta">Violeta</option>
+                            <option value="pastelVerde">Verde</option>
+                            <option value="pastelGris">Gris</option>
+                            <option value="pastelAzul">Azul</option>
+                        </select>
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Autor/a</label>
+                        <input class="inputForm" type="text" name="author" id="" value="<%= edit.authors.name %>">
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Categoria Original</label>
+                        <input class="inputForm soloLectura" type="text" id="" readonly="true"
+                            value="<%= edit.categories.category %>">
+                        <label class="labelForm" for="">Cambiar / Confirmar:</label>
+                        <select name="category" class="inputForm">
+                            <option value="Best Sellers">Best Sellers</option>
+                            <option value="Fiction">Ficción</option>
+                            <option value="Science">Ciencia</option>
+                        </select>
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Precio</label>
+                        <input class="inputForm" type="number" name="price" id="" value="<%= edit.price %>">
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Descripción</label>
+                        <input class="inputForm" type="text" name="description" id="" value="<%= edit.description %>">
+
+                    </div>
+
+                    <div class="formFields">
+
+                        <label class="labelForm" for="">Stock</label>
+                        <input class="inputForm" type="text" name="stock" id="" value="<%= edit.stock %>">
+
+                    </div>
+
+
+                    <div class="buttonFormContainer">
+                        <button class="buttonForm" type="submit">Submit</button>
+                        <button class="buttonForm" type="reset">Reset</button>
+                        
+                       
+                </form>
+
+                <form action="/products/edit/delete/<%= edit.id %>?_method=DELETE" method="POST">
+                    <button class="buttonForm" type="submit">Delete</button>
+                </form>
+
+                
+
+               
+
+                </div>
+
+
+                <%} else {%>
+                    <h2>LIBRO NO EXISTE</h2>
+                    <%}%>
+
+            </div>
+
+
+        </main>
+
+    </body>
+
+</html>

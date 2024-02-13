@@ -1,0 +1,44 @@
+{
+  "name": "overseasbooks",
+  "version": "1.0.0",
+  "description": "¿Qué productos o servicios brindará nuestro sitio? \r Libros\r ¿Quién será nuestra audiencia objetivo? \r Lectores\r ¿Cómo ajustaremos nuestra oferta a ese público?\r Ofreciendo distintos tipos de categorias\r Referencias:\r https://www.elejandria.com/\r https://www.ventadelibros.com.ar/\r https://www.tematika.com/\r https://www.cuspide.com/\r https://www.libreriaboris.com.ar/\r Estos sitios fueron elegidos por que al menos cada uno presenta una funcionalidad interesante para replicar en nuestro propio proyecto",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidArce397/OSBCompletoVersionFinal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidArce397/OSBCompletoVersionFinal/issues"
+  },
+  "homepage": "https://github.com/DavidArce397/OSBCompletoVersionFinal#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.3",
+    "mercadopago": "^1.5.16",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.2.0",
+    "nodemailer": "^6.9.3",
+    "sequelize": "5.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

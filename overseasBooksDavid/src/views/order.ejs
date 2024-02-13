@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs') %>
+<body>
+
+    <%- include('partials/header.ejs') %>
+    <%- include('partials/lowerNavBar.ejs') %>
+
+  <main class="main">
+
+      <article>
+        <div class="h4yxContenedor">
+          <h3>Pedido Nro. <%= order.id %></h3>
+          <i class="fa-solid fa-x"></i>
+        </div>
+      </article>
+      <article>
+        <div class="prodYSubContenedor" style="display: flex; justify-content: center; align-items: center;">
+          <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+              <th class="prod p" style="padding: 8px;">#</th>
+              <th class="prod p" style="padding: 8px;">PRODUCTO</th>
+              <th class="prod p" style="padding: 8px;">PRECIO</th>
+              <th class="prod p" style="padding: 8px;">CANTIDAD</th>
+              <th class="prod p" style="padding: 8px;">SUBTOTAL</th>
+            </thead>
+            <tbody class="cartRows">
+                <% for(let i=0; i < order.orderItems.length ; i++) { %>
+                    <tr>
+                        <th scope="row"><%= i + 1 %></th>
+                        <td style="padding: 8px; text-align: center;"><%= order.orderItems[i].title %></td>
+                        <td style="padding: 8px; text-align: center;">$<%= order.orderItems[i].price %></td>
+                        <td style="padding: 8px; text-align: center;"><%= order.orderItems[i].quantity %></td>
+                        <td style="padding: 8px; text-align: center;">$<%= order.orderItems[i].price * order.orderItems[i].quantity %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+           
+          </table>
+          <div class="totalContainer"><h2>TOTAL:</h2><span class="totalAmount">$<%=order.total %></span></div>
+        </div>
+      </article>
+     
+
+      <section  class="card-body" id="checkoutCart">
+        <div class="fieldsContainer">
+          <!-- Tipo de envío -->
+          <div>
+            <p><b>Tipo de envío : </b><%= order.shipping_method %> </p>
+          </div>
+
+          <!-- Método de pago -->
+          <div>
+            <p><b>Método de pago : </b><%= order.payment_method %> </p>
+          </div>
+        </div>
+        </section>
+
+      <!-- <div id="popup" class="popup">
+        <span class="popup-message">Compra realizada con éxito!</span>
+      </div> -->
+
+
+      <%- include('partials/footer.ejs') %>
+      <%- include('partials/lowerFooter.ejs') %>
+
+  </main>
+
+  <!-- <script src="/js/cart.js"></script> -->
+
+</body>
+</html>

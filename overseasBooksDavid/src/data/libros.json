@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "titleEng": "The Secret Messenger",
+        "titleEsp": "El Mensaje",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Mandy Robotham",
+        "category": "Best Sellers",
+        "price": "14.99",
+        "img": "/images/products//product-1676652093764_img.jpeg"
+    },
+    {
+        "id": 2,
+        "titleEng": "Babel",
+        "titleEsp": "Babel",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "R. F. Kuang",
+        "category": "Best Sellers",
+        "price": "14.99",
+        "img": "/images/products/id2-babel.jpg"
+    },
+    {
+        "id": 3,
+        "titleEng": "Lessons in Chemistry",
+        "titleEsp": "Lecciones en Química",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Bonnie Garmus",
+        "category": "Best Sellers",
+        "price": "8.99",
+        "img": "/images/products/id3-lessons-in-chemistry.jpg"
+    },
+    {
+        "id": 4,
+        "titleEng": "The Dark Stuff",
+        "titleEsp": "La Cosa Oscura",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Paul Seiple",
+        "category": "Best Sellers",
+        "price": "7.99",
+        "img": "/images/products//product-1676655980280_img.jpeg"
+    },
+    {
+        "id": 5,
+        "titleEng": "Air Magic",
+        "titleEsp": "Aire y Magia",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Astrea Taylor",
+        "category": "Best Sellers",
+        "price": "21.99",
+        "img": "/images/products/id5-air-magic.jpeg"
+    },
+    {
+        "id": 6,
+        "titleEng": "An Immense World",
+        "titleEsp": "Un Mundo Inmenso",
+        "color": "pastelVerde",
+        "productDetail": "/details",
+        "author": "Ed Yong",
+        "category": "Science",
+        "price": 12.99,
+        "img": "/images/products/id6-immense-world.jpg"
+    },
+    {
+        "id": 7,
+        "titleEng": "How the world really works",
+        "titleEsp": "Como Funciona el Mundo",
+        "color": "pastelAzul",
+        "productDetail": "/details",
+        "author": "Vaclav Smil",
+        "category": "Science",
+        "price": 11.99,
+        "img": "/images/products/id7-how-world-really-works.jpg"
+    },
+    {
+        "id": 8,
+        "titleEng": "Stolen Focus",
+        "titleEsp": "Atención Robada",
+        "color": "pastelGris",
+        "productDetail": "/details",
+        "author": "Johann Hari",
+        "category": "Science",
+        "price": 19.99,
+        "img": "/images/products/id8-stolen-focus.jpg"
+    },
+    {
+        "id": 9,
+        "titleEng": "Breath",
+        "titleEsp": "Aliento",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "James Nestor",
+        "category": "Science",
+        "price": "9.99",
+        "img": "/images/products/id9-breath.jpg"
+    },
+    {
+        "id": 10,
+        "titleEng": "The Song of the Cell",
+        "titleEsp": "La Canción Celular",
+        "color": "pastelVioleta",
+        "productDetail": "/details",
+        "author": "Siddhartha Mukherjee",
+        "category": "Science",
+        "price": 13.99,
+        "img": "/images/products/id10-song-of-the-cell.jpg"
+    },
+    {
+        "id": 11,
+        "titleEng": "Fairy Tale",
+        "titleEsp": "Cuento de Hadas",
+        "color": "pastelAzul",
+        "productDetail": "/details",
+        "author": "Stephen King",
+        "category": "Fiction",
+        "price": 34.99,
+        "img": "/images/products/id11-fairy-tale.jpg"
+    },
+    {
+        "id": 12,
+        "titleEng": "Bright Creatures",
+        "titleEsp": "Criaturas Inteligentes",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Shelby Van Pelt",
+        "category": "Fiction",
+        "price": 29.99,
+        "img": "/images/products/id12-bright-creatures.jpg"
+    },
+    {
+        "id": 13,
+        "titleEng": "All Rights Reserved",
+        "titleEsp": "Derechos Reservados",
+        "color": "pastelAmarillo",
+        "productDetail": "/details",
+        "author": "Gregory Scott Katsoulis",
+        "category": "Fiction",
+        "price": 19.99,
+        "img": "/images/products/id13-rights-reserved.jpg"
+    },
+    {
+        "id": 14,
+        "titleEng": "Book of Night",
+        "titleEsp": "Libro de la Noche",
+        "color": "pastelAzul",
+        "productDetail": "/details",
+        "author": "Holly Black",
+        "category": "Fiction",
+        "price": 25.99,
+        "img": "/images/products/id14-book-night.jpg"
+    },
+    {
+        "id": 15,
+        "titleEng": "The Maid",
+        "titleEsp": "La Criada",
+        "color": "pastelCeleste",
+        "productDetail": "/details",
+        "author": "Nita Prose",
+        "category": "Fiction",
+        "price": "28.99",
+        "img": "/images/products/id15-the-maid.jpg"
+    }
+]

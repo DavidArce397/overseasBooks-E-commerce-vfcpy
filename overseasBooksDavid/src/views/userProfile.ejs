@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <%- include('partials/head.ejs') %>
+
+    <body class="createBody editBody">
+
+      <%- include('partials/header.ejs') %>
+        <%- include('partials/lowerNavBar.ejs') %>
+
+          <main class="mainprofile">
+
+            <div class="profilecontenedor">
+
+              <div class="datosprofile">
+                <div class="dato">
+                  <h3 class="nombreh4">Nombre: <h4 class="nombre">
+                      <%= user ? user.first_name : '' %>
+                    </h4>
+                  </h3>
+                </div>
+                <div class="dato">
+                  <h3 class="apellidoh4">Apellido: <h4 class="apellido">
+                      <%= user ? user.last_name : '' %>
+                    </h4>
+                  </h3>
+                </div>
+                <div class="dato">
+                  <h3 class="emailh4">Email: <h4 class="email">
+                      <%= user ? user.email : '' %>
+                    </h4>
+                  </h3>
+                </div>
+                <div class="dato"><a href="/user/logout"><button class="botonlogout">
+                      <h3>Cerrar sesion</h3>
+                    </button></a></div>
+              </div>
+              <div class="divImgProfile" >
+                <img
+                  src="/images/avatars/<%= user.avatar != null && user.avatar !== '' ? user.avatar : 'blank-profile-picture.png' %>"
+                  style="width: 70px;
+                  height: 100px;
+                  object-fit: contain;">
+              </div>
+
+            </div>
+
+
+            <% if( !locals.isAdmin ) { %>
+
+              <!-- Sección mis pedidos -->
+              <section>
+                <article>
+                  <div class="h4yxContenedor">
+                    <h3>Mis Pedidos </h3>
+                    <i class="fa-solid fa-x"></i>
+                  </div>
+                </article>
+                <article style="margin-bottom: 100px;">
+                  <div class="prodYSubContenedor" style="display: flex; justify-content: center; align-items: center;">
+                    <table style="border-collapse: collapse; width: 100%;">
+                      <thead>
+                        <th class="prod p" style="padding: 8px;">#</th>
+                        <th class="prod p" style="padding: 8px;">FECHA</th>
+                        <th class="prod p" style="padding: 8px;">TIPO ENVÍO</th>
+                        <th class="prod p" style="padding: 8px;">PAGO</th>
+                        <th class="prod p" style="padding: 8px;">TOTAL</th>
+                        <th></th>
+                      </thead>
+                      
+                      <tbody class="cartRows">
+                        <% if (orders.length === 0) { %>
+                          <tr>
+                            <td colspan="5" style="text-align: center;" class="textocarritocompras p">Aún no tiene pedidos</td>
+                          </tr>
+                          <% } %>
+
+                          <% let startIndex = (currentPage - 1) * perPage; %>
+                          <% orders.forEach((order, index) => { %>
+                            <tr>
+                              <th scope="row">
+                                <%= startIndex + index + 1 %>
+                              </th>
+                              <td style="padding: 8px; text-align: center;">
+                                <%= order.createdAt %>
+                              </td>
+                              <td style="padding: 8px; text-align: center;">
+                                <%= order.shipping_method %>
+                              </td>
+                              <td style="padding: 8px; text-align: center;">
+                                <%= order.payment_method %>
+                              </td>
+                              <td style="padding: 8px; text-align: center;">
+                                $<%= order.total %>
+                              </td>
+                              <td>
+                                <a href="<%= `/orders/${order.id}` %>" style="text-decoration: none; color: inherit;">
+                                  <i class="fa-solid fa-eye"></i>
+                                </a>
+                              </td>
+                            </tr>
+                          <% }) %>  
+
+                      </tbody>
+                    </table>
+                    
+                  </div>
+
+                  <!-- Estilo para paginación -->
+                  <style>
+                    ul.pagination {
+                        display: flex;
+                        justify-content: center;
+                        align-items: centerf;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    ul.pagination li {display: inline;}
+                    
+                    ul.pagination li a {
+                        color: black;
+                        float: left;
+                        padding: 8px 16px;
+                        text-decoration: none;
+                        transition: background-color .3s;
+                        border: 1px solid #ddd;
+                        font-size: 18px;
+                    }
+                    
+                    ul.pagination li a.active {
+                        background-color: #eee;
+                        color: black;
+                        border: 1px solid #ddd;
+                    }
+                    
+                    ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+                    </style>
+                    <!-- Fin estilo paginación -->
+
+                    </head>
+                    <body>
+                      
+                      <!-- Lógica de paginación -->
+                      <ul class="pagination">
+                        <% if (currentPage > 1) { %>
+                          <li><a href="/user/profile?page=<%= currentPage - 1 %>">❮</a></li>
+                        <% } %>
+                      
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <li><a href="/user/profile?page=<%= i %>"><%= i %></a></li>
+                        <% } %>
+                      
+                        <% if (currentPage < totalPages) { %>
+                          <li><a href="/user/profile?page=<%= currentPage + 1 %>">❯</a></li>
+                        <% } %>
+                      </ul>
+
+                </article>
+              </section>
+              <% } %>
+
+
+          </main>
+
+          <%- include('partials/footer.ejs') %>
+          
+
+    </body>
+
+  </html>
